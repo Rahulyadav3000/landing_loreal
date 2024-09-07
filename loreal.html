@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loreal</title>
+    <style>
+        .fix{
+            position: relative;
+            margin-top: -28px;
+            margin-left: -8px ;
+            margin-right: -8px;
+            margin-bottom: -8px;
+            display: flex;
+            flex-direction: column;
+            z-index:16;
+            border-bottom: 1px solid white;
+            transition-duration: 1s;
+        }
+        .fix:hover{
+            background-color: black;
+            filter: invert(1);
+        }
+        .hat{
+            position: absolute;
+            z-index:15 ;
+            margin-left: -10px;
+            margin-top: -10px;
+        }
+        .navbar{
+            position: relative;
+            display: flex;
+            z-index:30 ;
+        }
+        .item {
+            display: flex;
+            width: 650px;
+            height: 50px;
+        }
+        .item div{
+            margin-left: 15px;
+            margin-top: 20px;
+        }
+        .item2 {
+            display: flex;
+            width: 190px;
+            height: 50px;
+            flex-direction: column;
+            margin-top: 8px;
+        }
+        .item2 div{
+            text-align: center;
+        }
+        .item3 {
+            display: flex;
+            flex-direction: row-reverse;
+            width: 675px;
+            height: 50px;
+            text-align: center;
+        }
+        .item3 div{
+            margin-top: 20px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        select{
+            background-color: transparent;
+            border-color: white;
+            color: white;
+        }
+        .item3 div option{
+            color: black;
+        }
+        .low a{
+            text-decoration:none;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: small ;
+
+        }
+        .high a{
+            text-decoration:none;
+            color: white;
+            font-family: 'Trade Gothic LT Std', sans-serif;;
+            font-size: xx-large ;
+        }
+        .navbar2{
+            position: relative;
+            margin-top: 7px;
+            margin-left: 250px;
+            display: flex;
+            height: 60px;
+            width: 900px;
+            z-index:16;
+        }
+        .low1 a{
+            text-decoration:none;
+            color: white;
+            font-family: PlayfairDisplay-VariableFont_wght;
+            font-size:130% ;
+        }
+        .navbar2 div{
+            margin-top: 20px;
+            margin-left: 70px;
+        }
+       .low1 a:hover{
+            transition-duration: 0.5s;
+            color: grey;
+        }
+        .king{
+            font-size: 350%;
+            margin-top: 300px;
+            margin-left: 150px;
+            color: white;
+            position: relative;
+            z-index: 30;
+        }
+        .u a{
+            text-decoration: none;
+            color: black;
+        }
+        .queen{
+            margin-top: 20px;
+            margin-left: 150px;
+            font-size: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            height:17px;
+            width: 240px;
+            padding: 8px;
+            padding-left: 17px;
+            background-color: white;
+            border-radius: 16px;
+            position: relative;
+            z-index: 30;
+        }
+        .queen:hover{
+            transition-duration: 0.4s;
+            color: white;
+            background-color: rgb(62, 54, 54);
+        }
+        .box{
+            display: flex;
+            flex-direction: column;
+            margin-top: 60px;
+            margin-left: 250px;
+            background-color: white;
+            border-radius: 13px;;
+            box-shadow:0px 5px 20px 0.4px grey;
+            height: 80px;
+            width: 1000px;
+            text-align: center;
+            padding-top: 10px;
+            font-size: 170%;
+            position: relative;
+            z-index: 30;
+        }
+        .boxline{
+            border-top: 1px solid rgb(181, 178, 178);
+            margin-top: 5.4px;
+            display: flex;
+        }
+        .boxline input{
+            border: none;
+            outline:none;
+            height: 50px;
+            width: 750px;
+            border-radius: 0px 0px 0px 13px;
+            padding-left: 50px;
+            padding-right: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: large;
+        }
+        .boxline a{
+            height:36px;
+            width: 250px;
+            background-color: rgb(197, 193, 193);
+            color: rgb(63, 61, 61);
+            font-size: 70%;
+            font-family: Arial, Helvetica, sans-serif;
+            border-radius: 0px 0px 13px 0px;
+            padding-top: 14px;
+        }
+        .boxline a:hover{
+            transition: 0.5s;
+            background-color: rgb(41, 39, 39);
+            color: white;
+        }
+        .two{
+           margin-top: 80px; 
+           margin-left: 150px;
+           width: 500px;
+        }
+        .on{
+            font-size: 120%;
+        }
+        .to{
+            font-size: 250%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .th{
+            color: grey;
+            font-size: 110%;
+        }
+        .container video{
+            margin-top: 150px;
+            margin-left: -7px;
+        }
+        .gin{
+            display:flex;
+            margin-left:550px;
+            margin-top:-250px;
+            /*border: 2px solid red;*/
+            height: 470px;
+            width: 958px;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+        }
+        .gin::-webkit-scrollbar{
+            height:5px;
+            background: rgb(194, 192, 192);
+            border-radius: 5px;
+            size:10px;
+            background-clip: content-box;
+        }
+        .gin::-webkit-scrollbar-thumb{
+            background: black;
+            border-radius: 5px;
+        }
+        .gin::-webkit-scrollbar-thumb:hover{
+            background: rgb(155, 153, 153);
+        }
+        .card{
+            flex: 0 0 auto;
+            margin-top: 20px;
+            height:400px;
+            width: 210px;
+            margin-left:25px;
+            border-radius: 15px;
+            box-shadow: 0px 0.2px 15px 0.02px grey;
+            overflow: hidden;
+            transition: 0.8s;
+        }
+        .icontent{
+            box-sizing: border-box;
+            position: relative;
+            border-radius: 15px;
+            z-index: 16;
+        }
+        .tcontent{
+            box-sizing: border-box;
+            position: relative;
+            background-color: white;
+            z-index: 17;
+            margin-top: -150px;
+            height: 150px;
+            padding-left: 20px;
+            padding-top: 15px;
+        }
+        .content1{
+            color: rgb(175, 175, 175);
+        }
+        .content2{
+            font-family: Arial,Helvetica,sans-serif;;
+            font-size: 120%;
+            margin-top: 10px;
+        }
+        .content3{
+            position: relative;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 180%;
+            margin-top: -100px;
+            color: white;
+            text-align: center;
+            z-index: 17;            
+        }
+        .card:hover{
+           transform: scale(1.1);
+        }
+        .lastbox{
+            margin-top:100px;
+            border-top: 1px solid rgb(161, 159, 159);
+            border-bottom: 1px solid  rgb(161, 159, 159);
+            height: 380px;
+        }
+        .las1 a{
+            text-decoration: none;
+            font-size: medium;
+            font-family:Arial, Helvetica, sans-serif;
+            display: list-item;
+            color:rgb(108, 107, 107);
+            margin-bottom: 25px;
+            margin-left: 150px;
+            list-style: none;
+        }
+        .las1 img{
+            margin-left: 140px;
+        }
+        .las2{
+            margin-left:1000px;
+            margin-top: -280px;
+        }
+        .las2 a{
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 90%;
+            display: inline;
+            color: rgb(28, 28, 28);
+            margin-left: 20px;       
+        }
+        .las1 a:hover{
+            transition-duration: 0.3s;
+            color: rgb(171, 170, 170);
+        }
+        .foot{
+            margin-top: 45px;
+            margin-bottom: 50px;
+        }
+        .f1{
+            margin-left: 130px;
+        }
+        .f1 a{
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 90%;
+            display: inline;
+            color: rgb(198, 194, 194);
+            margin-left: 22px;
+        }
+        .f1 a:hover{
+            transition-duration: 0.5s;
+            color: rgb(28, 28, 28);
+        }
+        .f2{
+            border-left: 1.5px solid rgb(198, 194, 194);
+            height: 13px;
+            width: 1.5px;
+            margin-left: 750px;
+            margin-top:-15px;
+        }
+
+        .f3{
+            margin-top: -15px;
+            margin-left: 790px;
+        }
+        .f3 a{
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            color:rgb(198, 194, 194);
+        }
+        @media screen and (max-width: 1440px) {
+            .fix{
+                display: none;
+            }
+            .hat{
+                width: 100%;
+                height:100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+        <div class="hat"><img src="rahul.jpg"  height="651px" width="1520px"></div>;
+        <div class="fix" >
+          <nav class="navbar">
+            <one class="item">
+                <div class="low"><a href="#">Journalists</a></div>
+                <div class="low"><a href="#">Suppliers</a></div>
+                <div class="low" ><a href="#">Investors & Shareholders</a></div>
+            </one>
+            <two class="item2">
+                <div class="high"><a href="#">LOREAL</a></div>
+                <div class="low"><a href="#">GROUPE</a></div>
+            </two>
+            <three class="item3">
+                <div class="low"><a href="#"><img src="mg.png"  width="25" height="25"></a></div>
+                <div class="low">
+                    <select name="EN" id="language">
+                        <option value="English">EN</option>
+                        <option value="french"><a href="#">FR</a></option>
+                        <option value="Russian"><a href="#">RU</a></option>
+                    </select>
+                </div>
+                <div class="low">
+                    <a href="#"><img src="white-globe-icon-7.jpg" width="15" height="15"></a>
+                    <a href="#">Location</a>
+                </div>
+                <div class="low">
+                    <a href="#"><img src="a.jpg" width="15" height="15"></a>
+                    <a href="#">Accessibility</a>
+                </div>
+                <div class="low">
+                    <a href="#"></a><img src="ar.png"  width="16" height="14">
+                    <a href="#">OR.PA € 426.20 -0.05%</a>
+                </div>
+            </three>
+         </nav>
+         <nav class="navbar2">
+            <div class="low1"><a href="#">Group</a></div>
+            <div class="low1"><a href="#">Commitments</a></div>
+            <div class="low1"><a href="#">Brands</a></div>
+            <div class="low1"><a href="#">Beauty Science & Technology</a></div>
+            <div class="low1"><a href="#">Careers</a></div>
+         </nav>
+        </div>
+    <div class="king">The Essentiality of Stories</div>
+    <div class="u">
+         <a href="#"><div class="queen">Discover why friendship is essential</div></a>
+    </div>
+    <div class="box">
+        <div id="box-1">
+           Find out more about RAHUL
+        </div>
+        <div class="boxline">
+            <input type="search" placeholder="Define your search..."></input>
+            <a href="#"  style="text-decoration: none; text-align: center;">Search</a>
+        </div>
+    </div>
+    <div class="two">
+    <p>
+        <div class="on">Discover</div><br>
+        <div class="to">Our BIT<br>
+        stories<br>
+        </div>
+        <br>
+        <div class="th">
+        Things are never quite as scary when you've got a best friend.<br> 
+        A true friend never gets in your way unless you happen to be going down.<br> 
+        To the world you may be just one person, but to one person you may be the world..<br> 
+        Here's a look at the Group’s latest stories.<br>
+        </div>
+    </p>
+    </div>
+    <div class="gin">
+        <a href="#" style="text-decoration: none; color: black;"><div  id="card-1" class="card">
+            <div class="icontent"><img src="c1.jpeg" height="400px" width="210px"></div>
+            <div class="tcontent">
+              <div class="content1">Sciene and Technology</div>
+              <div class="content2">Beauty for all with<br>HAPTA</div>
+            </div>
+        </div>
+        </a>
+            <a href="#" style="text-decoration: none; color: black;"><div  id="card-2" class="card">
+                <div class="icontent"><img src="c2.jpeg" height="400px" width="210px"></div>
+                <div class="tcontent">
+                  <div class="content1">Sciene and Technology</div>
+                  <div class="content2">The eyebrow look<br>created by L’Oréal<br>Brow Magic</div>
+                </div>
+            </div>
+            </a>           
+            <a href="#" style="text-decoration: none; color: black;"><div  id="card-3" class="card">
+                <div class="icontent"><img src="c3.jpg" height="400px" width="210px"></div>
+                <div class="content3">Water Saver</div>
+            </div>
+            </a>
+            <a href="#" style="text-decoration: none; color: black;"><div  id="card-4" class="card">
+                <div class="icontent"><img src="c4.jpeg" height="400px" width="210px"></div>
+                <div class="content3">Future of <br>Beauty</div>
+            </div>
+            </a>
+            <a href="#" style="text-decoration: none; color: black;"><div  id="card-5" class="card">
+                <div class="icontent"><img src="c5.jpeg" height="400px" width="210px"></div>
+                <div class="content3" style="margin-top:-180px">Wave a magic<br>wand over your<br>faded roots with colorsonic</div>
+            </div>
+            </a>          
+            <a href="#" style="text-decoration: none; color: black;"><div  id="card-6" class="card">
+                <div class="icontent"><img src="c6.jpg" height="400px" width="210px"></div>
+                <div class="tcontent" style="margin-top: -160px">
+                  <div class="content1">Communities</div>
+                  <div class="content2" style="margin-top: 0px">Garnier To <br>Empower 250<br> Million People To<br> Live Greener</div>
+                </div>
+            </div>
+            </a>
+            <a href="#" style="text-decoration: none; color: black;"><div  id="card-7" class="card">
+                <div class="icontent"><img src="c7.jpeg" height="400px" width="210px"></div>
+                <div class="tcontent" style="margin-top: -160px">
+                  <div class="content1">Communities</div>
+                  <div class="content2" style="margin-top: 0px">Mugler:Born<br>Refillable in 1992</div>
+                </div>
+            </div>
+            </a>
+            <a href="#" style="text-decoration: none; color: black;"><div  id="card-8" class="card">
+                <div class="icontent"><img src="c8.jpg" height="400px" width="210px"></div>
+                <div class="tcontent" style="margin-top: -160px;">
+                  <div class="content1">Communities</div>
+                  <div class="content2" style="margin-top: 0px">L'Oréal: our brands<br> and local teams <br>stand with the <br>LGBTQIA+ group</div>
+                </div>
+            </div>
+            </a> 
+    </div>
+    <div class="container">
+    <video  height="900px"  width="1517px" autoplay preload muted  loop>
+        <source src="vid1.mp4" type="video/mp4">
+    </video>
+    </div>
+    <div class="lastbox">
+        <div class="las1">
+            <img src="lasti.png" height="110px" width="140px">
+            <a href="#">Group</a>
+            <a href="#">Commitments</a>
+            <a href="#">Brands</a>
+            <a href="#">Beauty Science</a>
+            <a href="#">Careers</a>
+        </div>
+        <div class="las2">
+            <a href="#">Journalists</a>
+            <a href="#">Suppliers</a>
+            <a href="#">Investors & Shareholders</a>
+        </div>
+    </div>
+    <div class="foot">
+        <div class="f1">
+          <a href="#">Cookie settings</a>
+          <a href="#">Term of use</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Business Customer Privacy Policy</a>
+        </div> 
+        <div class="f2"></div>
+        <div class="f3"><a href="#">Accessibility assessment</a></div>
+        <div class="f4"></div>
+    </div>
+    <script>
+    </script>
+</body>
+</html>
